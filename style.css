@@ -1,0 +1,33 @@
+.title{
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 900;
+    color: #A9A9A9;
+    font-size: 50px;
+    letter-spacing: 10px;
+    line-height: 1.6;
+}
+
+.images{
+    text-align: center;
+    margin-top: 90px;
+}
+
+.images .img{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #A9A9A9;
+    border-radius: 50%;
+    margin: 50px 50px 0px 50px;
+}
+
+.images .img:hover{
+    filter: brightness(105%);
+    border-color: #98FB98;
+    
+}
+
+.images .quest{
+    color: #778899;
+}
+

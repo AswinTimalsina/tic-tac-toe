@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+<!-- 
+=======================================================================
+Document:         XHTML_template.html
+Author:           Aswin Timalsina
+Student Number:   30098693
+Organization:     The University of Louisiana at Monroe
+Class:            CSCI 3030-43896, Fall, 2019
+Assignment:       Assignemnt 06
+Due Date:         November, 7, 2019
+
+Description:      This document displays the popular Children's game Rock Paper Scissors. The game is also known as Roshambo. The user plays game with the logic or JavaScript or computer.
+
+Honor Statement:  My signature below attests to the fact that I have
+                  neither given nor received aid on this project.
+
+
+X ________________Aswin Timalsina_____________________________________________________
+
+
+=======================================================================
+-->
+
+<head>
+
+<title>Rock, Paper, Scissor</title>
+
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta name="description" content="We are playing Rock, Paper, Scissor" />
+<meta name="keywords" content="IP, rock, paper, scissor, game, JS" />
+<meta name="author" content="Aswin Timalsina" />
+<meta name="revised" content="11/01/2019" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Oxygen|Teko&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+   <div>
+<div class="title" id="titleId"></div>
+
+<div class="title" style="font-family: 'Big Shoulders Text', cursive;">Let's Play <span style="color: #778899">Rock Paper Scissor</span></div>
+</div>
+
+
+<div class="images">
+<div class="quest title">Which One Do You Choose?</div>
+<input class="img" type="image" src="Clenched Fist.svg" alt="Rock" height="300px" width="300px" id="user" onclick="game()"/>
+<input class="img" type="image" src="Four Fingers.svg" alt="Paper" height="300px" width="300px" id="user1" onclick="game1()"/>
+<input class="img" type="image" src="Hand Scissors.svg" alt="Scissor" height="300px" width="300px"  id="user2" onclick="game2()"/>
+</div>
+
+<div id="result" class="quest title" style="margin-top: 20px; color: #ffcc66"></div>
+
+
+<script type="text/JavaScript">
+var name;
+
+//loops until the user type in their name
+do{
+   name = window.prompt("Enter your name: ");
+}
+while(name.length === 0)
+document.getElementById("titleId").innerHTML = "Hey " + "<span style=\"color: #ffcc66\">" + name +"!</span>";
+
+
+//function to generate random rock, paper or scissor
+function compGame(){
+   var rand = Math.floor(Math.random() * 3.33);
+   if(rand === 0){
+      return "Rock";
+   }
+   else if(rand === 1){
+      return "Paper";
+   }
+
+   else{
+      return "Scissor";
+   }
+}
+
+
+var res;
+//function of the game if the user clicks rock
+function game(){
+   switch(compGame()){
+      case "Rock":
+         res = "tie";
+         result();
+         break;
+
+      case "Paper":
+         res = "loss";
+         result();
+         break;
+
+      case "Scissor":
+         res = "win";
+         result();
+         break;
+
+   }
+}
+
+//function of the game if the user clicks paper
+function game1(){
+   switch(compGame()){
+      case "Rock":
+         res = "win";
+         result();
+         break;
+
+      case "Paper":
+         res = "tie";
+         result();
+         break;
+
+      case "Scissor":
+         res = "loss";
+         result();
+         break;
+
+   }
+}
+
+//function of the game if the user clicks scissor
+function game2(){
+   switch(compGame()){
+      case "Rock":
+         res = "loss";
+         result();
+         break;
+
+      case "Paper":
+         res = "win";
+         result();
+         break;
+
+      case "Scissor":
+         res = "tie";
+         result();
+         break;
+
+   }
+}
+
+//function to display result to the player
+function result(){
+   switch(res){
+      case "loss":
+         document.getElementById("result").innerHTML = "Sorry! You lost it :(" ;
+         break;
+
+      case "win":
+         document.getElementById("result").innerHTML = "Congratulations! You won it!";
+         break;
+
+      case "tie":
+         document.getElementById("result").innerHTML = "It is a tie!";
+         break;
+   }
+}
+</script>
+</body>
+
+</html>
